@@ -21,4 +21,10 @@ class CalculatorTest {
         Calculator calc = new Calculator();
         assertEquals(2, calc.divide(4, 2));
     }
+
+    @Test
+    void testDivideByZero() {
+        Calculator calc = new Calculator();
+        assertThrows(IllegalArgumentException.class, () -> calc.divide(4, 0));
+    }
 }
